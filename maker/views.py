@@ -14,50 +14,28 @@ import os
 @api_view(['GET'])
 def getRoutes(request):
     routes = [
-        {
-            'HTTP Method': 'GET',
-            'Endpoint': '/api/tasks',
-            'Description': 'Retrieves a list of all tasks.'
-        },
-        {
-            'HTTP Method': 'DELETE',
-            'Endpoint': '/api/tasks',
-            'Description': 'Deletes all tasks.'
-
-        },
-        {
-            'HTTP Method': 'POST',
-            'Endpoint': '/api/tasks',
-            'Description': 'Creates a new task'
-
-        },
-        {
-            'HTTP Method': 'GET',
-            'Endpoint': '/api/tasks/{id}',
-            'Description': 'Retrieves a single task by its unique identifier.'
-
-        },
-        {
-            'HTTP Method': 'DELETE',
-            'Endpoint': '/api/tasks/{id}',
-            'Description': 'Deletes a task by its unique identifier.'
-
-        },
-        {
-            'HTTP Method': 'PUT',
-            'Endpoint': '/api/tasks/{id}',
-            'Description': 'Updates the priority of a task.'
-        },
-        {
-            'HTTP Method': 'PATCH',
-            'Endpoint': '/api/tasks/{id}/actionitems/{action_item_id}',
-            'Description': 'Updates the progress of an action item within a task.'
-        },
-        {
-            'HTTP Method': 'DELETE',
-            'Endpoint': '/api/tasks/{id}/actionitems/{action_item_id}',
-            'Description': 'Deletes an action item within a task.'
-        },
+        [
+            {
+                "HTTP Method": "POST",
+                "Endpoint": "/api/images",
+                "Description": "Uploads a new image and applies a watermark."
+            },
+            {
+                "HTTP Method": "GET",
+                "Endpoint": "/api/images",
+                "Description": "Retrieves a list of all images uploaded by the user."
+            },
+            {
+                "HTTP Method": "GET",
+                "Endpoint": "/api/images/{id}",
+                "Description": "Downloads a watermarked image by its unique identifier."
+            },
+            {
+                "HTTP Method": "DELETE",
+                "Endpoint": "/api/images/{id}",
+                "Description": "Deletes an image by its unique identifier."
+            },
+        ]
     ]
 
     return Response(routes)
